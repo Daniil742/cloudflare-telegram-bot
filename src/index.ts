@@ -61,7 +61,7 @@ export default {
     });
 
     bot.catch((err) => console.error(err));
-    const handler = webhookCallback(bot, "cloudflare");
-    return handler(request);
+    
+    return webhookCallback(bot, "cloudflare-mod")(request);
   },
 };

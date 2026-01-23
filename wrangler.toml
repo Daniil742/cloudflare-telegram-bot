@@ -1,0 +1,13 @@
+name = "telegram-waifu-bot"
+main = "src/index.ts"
+compatibility_date = "2024-01-01"
+
+# Привязка к базе данных
+[[d1_databases]]
+binding = "DB"
+database_name = "waifu-db"
+database_id = "2bd51923-c315-4a77-a818-9a04ae5bf7f9"
+
+# Привязка к AI
+[ai]
+binding = "AI"

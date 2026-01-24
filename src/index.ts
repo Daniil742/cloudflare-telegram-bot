@@ -44,7 +44,7 @@ export default {
 
       try {
         const response = await env.AI.run(
-          CURRENT_MODEL
+          CURRENT_MODEL,
           {
             prompt: `${prompt}`,
           }

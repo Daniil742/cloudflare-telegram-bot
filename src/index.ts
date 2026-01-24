@@ -10,7 +10,7 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const bot = new Bot(env.BOT_TOKEN);
 
-    const CURRENT_MODEL = "@cf/lykon/dreamshaper-8-lcm";
+    const CURRENT_MODEL = "@cf/bytedance/stable-diffusion-xl-lightning";
     const PROMPT_PREFIX = "anime style, high quality, masterpiece, ";
 
     // 3) "@cf/bytedance/stable-diffusion-xl-lightning",

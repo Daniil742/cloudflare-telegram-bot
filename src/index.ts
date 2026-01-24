@@ -34,7 +34,12 @@ export default {
 
       try {
         const response = await env.AI.run(
-          "@cf/stabilityai/stable-diffusion-xl-base-1.0",
+          "@cf/runwayml/stable-diffusion-v1-5-inpainting",
+          // 5) "@cf/bytedance/stable-diffusion-xl-lightning",
+          // 4) "@cf/lykon/dreamshaper-8-lcm",
+          // 3) "@cf/runwayml/stable-diffusion-v1-5-img2img",
+          // 2) "@cf/runwayml/stable-diffusion-v1-5-inpainting",
+          // 1) "@cf/stabilityai/stable-diffusion-xl-base-1.0",
           {
             prompt: `${prompt}`,//anime style, high quality, masterpiece, 
           }

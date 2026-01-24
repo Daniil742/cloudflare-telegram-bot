@@ -10,6 +10,16 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const bot = new Bot(env.BOT_TOKEN);
 
+    const CURRENT_MODEL = "@cf/lykon/dreamshaper-8-lcm";
+    const PROMPT_PREFIX = "anime style, high quality, masterpiece, ";
+
+    // 3) "@cf/bytedance/stable-diffusion-xl-lightning",
+    // 2) "@cf/lykon/dreamshaper-8-lcm",
+    // 1) "@cf/stabilityai/stable-diffusion-xl-base-1.0",
+    
+    // 2) "@cf/runwayml/stable-diffusion-v1-5-img2img",
+    // 1) "@cf/runwayml/stable-diffusion-v1-5-inpainting",
+    
     bot.command("start", async (ctx) => {
       const userId = ctx.from!.id;
       const username = ctx.from?.username || "unknown";
@@ -21,7 +31,7 @@ export default {
         )
           .bind(userId, username, firstName, username, firstName)
           .run();
-        await ctx.reply("Привет! Напиши описание для генерации.");
+        await ctx.reply(`Привет! Тестирую модель: ${CURRENT_MODEL}. Напиши описание для генерации.`);
       } catch (err) {
         console.error(err);
         await ctx.reply("Ошибка БД.");
@@ -34,14 +44,9 @@ export default {
 
       try {
         const response = await env.AI.run(
-          "@cf/runwayml/stable-diffusion-v1-5-inpainting",
-          // 5) "@cf/bytedance/stable-diffusion-xl-lightning",
-          // 4) "@cf/lykon/dreamshaper-8-lcm",
-          // 3) "@cf/runwayml/stable-diffusion-v1-5-img2img",
-          // 2) "@cf/runwayml/stable-diffusion-v1-5-inpainting",
-          // 1) "@cf/stabilityai/stable-diffusion-xl-base-1.0",
+          CURRENT_MODEL
           {
-            prompt: `${prompt}`,//anime style, high quality, masterpiece, 
+            prompt: `${prompt}`,
           }
         );
 

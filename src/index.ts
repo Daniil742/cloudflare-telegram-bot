@@ -10,7 +10,7 @@ export default {
   async fetch(request: Request, env: Env, ctx: ExecutionContext): Promise<Response> {
     const bot = new Bot(env.BOT_TOKEN);
 
-    const CURRENT_MODEL = "@cf/bytedance/stable-diffusion-xl-lightning";
+    const CURRENT_MODEL = "@cf/stabilityai/stable-diffusion-xl-base-1.0";
     const PROMPT_PREFIX = "anime style, high quality, masterpiece, ";
 
     // 3) "@cf/bytedance/stable-diffusion-xl-lightning",

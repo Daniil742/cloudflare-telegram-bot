@@ -1,1 +1,1 @@
-# telegram-waifu-bot
+# telegram-bot
